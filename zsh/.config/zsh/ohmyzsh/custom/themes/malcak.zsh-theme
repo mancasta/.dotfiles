@@ -5,35 +5,7 @@ username() {
 }
 
 directory() {
-  current_path=$(pwd)
-  case "$current_path" in
-    /etc*)
-      folder_icon="󱧼 ";;
-    /tmp*)
-      folder_icon="󰪺 ";;
-    $HOME/.config*)
-      folder_icon="󱁿 ";;
-    $HOME/.ssh*)
-      folder_icon="󰉐 ";;
-    $HOME/Desktop*)
-      folder_icon="󱂵 ";;
-    $HOME/Documents*)
-      folder_icon="󱧶 ";;
-    $HOME/Downloads*)
-      folder_icon="󰉍 ";;
-    $HOME/Music*)
-      folder_icon="󱍙 ";;
-    $HOME/Pictures*)
-      folder_icon="󰉏 ";;
-    $HOME/Public*)
-      folder_icon="󱞊 ";;
-    $HOME/Templates*)
-      folder_icon="󱞞 ";;
-    $HOME/Videos*)
-      folder_icon="󱧺 ";;
-    *)
-      folder_icon="󰉋 ";;
-  esac
+  folder_icon="󰉋 "
   echo "%{$FG[003]%}$folder_icon%{$FG[004]%}%2~%{$reset_color%}"
 }
 
