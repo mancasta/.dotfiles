@@ -25,6 +25,7 @@ fi
 # Added by rustup install (see https://rustup.rs/)
 # export RUSTUP_HOME="$HOME/.devtools/.rustup"; export CARGO_HOME="$HOME/.devtools/.cargo"; export PATH="$HOME/.devtools/.cargo/bin:$PATH";
 
-# Added by kubectl install
-# add kubectl completions
-# source <(kubectl completion zsh)
+# Add kubectl completions
+command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
+# Add docker completions
+command -v docker > /dev/null 2>&1 && source <(docker completion zsh)
