@@ -88,16 +88,16 @@ export ZSH_AUTOSUGGEST_STRATEGY=(completion history match_prev_cmd)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Alias definitions
-if [ -f "$ZDOTDIR/.zaliases" ]; then
+if [ -f "$ZDOTDIR/.zaliases.zsh" ]; then
   . $ZDOTDIR/.zaliases.zsh
 fi
 
 # Variables definitions
-if [ -f "$ZDOTDIR/.zvariables" ]; then
+if [ -f "$ZDOTDIR/.zvariables.zsh" ]; then
   .  $ZDOTDIR/.zvariables.zsh
 fi
 
 # Functions
-if [ -f "$ZDOTDIR/.zfunctions" ]; then
+if [ -f "$ZDOTDIR/.zfunctions.zsh" ]; then
   .  $ZDOTDIR/.zfunctions.zsh
 fi
