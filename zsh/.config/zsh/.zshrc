@@ -101,3 +101,8 @@ fi
 if [ -f "$ZDOTDIR/.zfunctions.zsh" ]; then
   .  $ZDOTDIR/.zfunctions.zsh
 fi
+
+# Completions
+if [ -f "$ZDOTDIR/.zcompletions.zsh" ]; then
+  .  $ZDOTDIR/.zcompletions.zsh
+fi

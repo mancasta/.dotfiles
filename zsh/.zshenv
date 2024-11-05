@@ -25,8 +25,3 @@ export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 # iterm2 shell integration
 test -e /Users/mancasta/.iterm2_shell_integration.zsh && source /Users/mancasta/.iterm2_shell_integration.zsh || true
-
-# Add kubectl completions
-command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
-# Add docker completions
-command -v docker > /dev/null 2>&1 && source <(docker completion zsh)
