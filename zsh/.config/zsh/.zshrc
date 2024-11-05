@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -78,17 +76,17 @@ esac
 
 # Alias definitions
 if [ -f "$ZDOTDIR/.zaliases" ]; then
-  . $ZDOTDIR/.zaliases
+  . $ZDOTDIR/.zaliases.zsh
 fi
 
 # Variables definitions
 if [ -f "$ZDOTDIR/.zvariables" ]; then
-  .  $ZDOTDIR/.zvariables
+  .  $ZDOTDIR/.zvariables.zsh
 fi
 
 # Functions
 if [ -f "$ZDOTDIR/.zfunctions" ]; then
-  .  $ZDOTDIR/.zfunctions
+  .  $ZDOTDIR/.zfunctions.zsh
 fi
 
 # zsh-syntax-highlighting (https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)

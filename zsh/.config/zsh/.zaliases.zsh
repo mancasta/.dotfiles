@@ -1,7 +1,3 @@
-#!/usr/bin/env zsh
-
-# Alias definitions.
-
 # ls aliases
 alias ll='gls -Alvh --group-directories-first --dereference --color'
 alias lln='gls -Alvh --group-directories-first --color'

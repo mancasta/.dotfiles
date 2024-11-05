@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 get-token() {
   jq -r .access_token ~/.sl/tokens
 }

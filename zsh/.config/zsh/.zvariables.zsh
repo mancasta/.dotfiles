@@ -1,4 +1,3 @@
-#!/bin/zsh
 # env variables
 export AWS_DEFAULT_PROFILE="strln"
 
