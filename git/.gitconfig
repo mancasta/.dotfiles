@@ -4,7 +4,7 @@
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBbQFmXLyLC4ViSsFXS8X5tz+UYbwM5u4KbMWLCo1zO8
 
 [init]
-  defaultBranch = master
+  defaultBranch = main
 
 [url "git@github.office.opendns.com:"]
   insteadof = https://github.office.opendns.com/
