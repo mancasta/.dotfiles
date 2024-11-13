@@ -35,7 +35,7 @@ end)
 
 -- font config
 config.font = wezterm.font 'FiraMono Nerd Font Mono'
-config.font_size = 20.0
+config.font_size = 18.0
 
 config.use_fancy_tab_bar = true
 config.enable_tab_bar = true
