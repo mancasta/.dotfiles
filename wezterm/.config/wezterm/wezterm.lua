@@ -40,8 +40,8 @@ config.font_size = 18.0
 config.use_fancy_tab_bar = true
 config.enable_tab_bar = true
 config.tab_bar_at_bottom = true
-config.max_fps = 120
-config.animation_fps = 30
+config.max_fps = 240
+config.animation_fps = 60
 
 -- color theme config
 config.color_scheme = 'Malcak'
