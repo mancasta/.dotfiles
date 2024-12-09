@@ -86,6 +86,8 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 ## zsh-autosuggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(completion history match_prev_cmd)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+## zsh-autoenv
+source ~/.local/bin/zsh-autoenv/autoenv.zsh
 
 # Alias definitions
 if [ -f "$ZDOTDIR/.zaliases.zsh" ]; then
