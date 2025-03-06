@@ -36,4 +36,3 @@ alias aws-whoami='aws --profile strln sts get-caller-identity'
 alias ff="fastfetch"
 alias wl="wishlist"
 alias jctt="PYTHONPATH=/Users/mancasta/Workspace/ops-docs/checklists/scripts /Users/mancasta/Workspace/ops-docs/checklists/scripts/.venv/bin/JiraChecklistTemplate"
-alias tutor="/Users/mancasta/Workspace/tutor/.venv/bin/tutor"

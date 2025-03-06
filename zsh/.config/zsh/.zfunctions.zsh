@@ -11,3 +11,8 @@ pid-by-port() {
     echo "No process found using port $1"
   fi
 }
+
+tutor() {
+  local PYTHONPATH="/Users/mancasta/Workspace/tutor"
+  (cd /Users/mancasta/Workspace/tutor && exec /Users/mancasta/Workspace/tutor/.venv/bin/tutor $@)
+}
