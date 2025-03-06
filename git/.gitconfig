@@ -6,8 +6,6 @@
 [init]
   defaultBranch = main
 
-[url "git@github.office.opendns.com:"]
-  insteadof = https://github.office.opendns.com/
 [url "git@github.com:"]
   insteadof = https://github.com/
 
