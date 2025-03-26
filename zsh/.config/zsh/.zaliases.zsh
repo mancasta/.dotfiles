@@ -29,7 +29,6 @@ alias rd-legacy="RD_TOKEN="$(cat ~/.secrets/rd-legacy)" RD_URL=https://rundeck-u
 
 # random tools aliases
 alias now='date -u "+%Y-%m-%dT%H-%M-%S%Z"'
-alias bat='bat --paging=never'
 alias k9s='k9s --readonly -n default'
 alias tfswitch='tfswitch -b "$HOME/.local/bin/terraform"'
 alias aws-whoami='aws --profile strln sts get-caller-identity'
