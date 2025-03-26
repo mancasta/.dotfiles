@@ -89,6 +89,9 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 ## zsh-autoenv
 source ~/.local/bin/zsh-autoenv/autoenv.zsh
 
+## atuin history
+eval "$(atuin init zsh --disable-up-arrow)"
+
 # Alias definitions
 if [ -f "$ZDOTDIR/.zaliases.zsh" ]; then
   . $ZDOTDIR/.zaliases.zsh
