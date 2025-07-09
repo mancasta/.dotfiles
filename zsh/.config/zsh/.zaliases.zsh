@@ -33,4 +33,4 @@ alias k9s='k9s --readonly -n default'
 alias tfswitch='tfswitch -b "$HOME/.local/bin/terraform"'
 alias aws-whoami='aws --profile strln sts get-caller-identity'
 alias ff="fastfetch"
-alias jctt="PYTHONPATH=/Users/mancasta/Workspace/ops-docs/checklists/scripts /Users/mancasta/Workspace/ops-docs/checklists/scripts/.venv/bin/JiraChecklistTemplate"
+alias jctt="PYTHONPATH=/Users/mancasta/Workspace/cloudsec_sysv/ops-docs/checklists/scripts /Users/mancasta/Workspace/cloudsec_sysv/ops-docs/checklists/scripts/.venv/bin/JiraChecklistTemplate"
