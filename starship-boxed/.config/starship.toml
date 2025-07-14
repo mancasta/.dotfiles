@@ -3,8 +3,7 @@ $os\
 $username\
 $directory\
 $time\
-[ ](black)\
-$all\
+([ ](black)$all)\
 $line_break\
 [ │](fg:#404040)\
 $line_break\
