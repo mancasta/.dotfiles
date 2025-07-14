@@ -21,17 +21,26 @@ symbol = "aws "
 [azure]
 symbol = "az "
 
+[buf]
+symbol = "buf "
+
 [bun]
 symbol = "bun "
 
 [c]
 symbol = "C "
 
+[cpp]
+symbol = "C++ "
+
 [cobol]
 symbol = "cobol "
 
 [conda]
 symbol = "conda "
+
+[container]
+symbol = "container "
 
 [crystal]
 symbol = "cr "
@@ -87,6 +96,12 @@ symbol = "gradle "
 [guix_shell]
 symbol = "guix "
 
+[haskell]
+symbol = "haskell "
+
+[helm]
+symbol = "helm "
+
 [hg_branch]
 symbol = "hg "
 
@@ -135,6 +150,8 @@ Amazon = "amz "
 Android = "andr "
 Arch = "rch "
 Artix = "atx "
+Bluefin = "blfn "
+CachyOS = "cach "
 CentOS = "cent "
 Debian = "deb "
 DragonFly = "dfbsd "
@@ -156,6 +173,7 @@ MidnightBSD = "mid "
 Mint = "mint "
 NetBSD = "nbsd "
 NixOS = "nix "
+Nobara = "nbra "
 OpenBSD = "obsd "
 OpenCloudOS = "ocos "
 openEuler = "oeul "
@@ -172,6 +190,7 @@ SUSE = "suse "
 Ubuntu = "ubnt "
 Ultramarine = "ultm "
 Unknown = "unk "
+Uos = "uos "
 Void = "void "
 Windows = "win "
 
@@ -187,6 +206,9 @@ symbol = "php "
 [pijul_channel]
 symbol = "pijul "
 
+[pixi]
+symbol = "pixi "
+
 [pulumi]
 symbol = "pulumi "
 
@@ -201,6 +223,9 @@ symbol = "quarto "
 
 [raku]
 symbol = "raku "
+
+[rlang]
+symbol = "r "
 
 [ruby]
 symbol = "rb "
@@ -239,4 +264,3 @@ symbol = "zig "
 disabled = false
 style = "bold green"
 ssh_symbol = ""
-
