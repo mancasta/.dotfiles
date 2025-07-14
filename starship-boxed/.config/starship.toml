@@ -1,0 +1,146 @@
+format = """
+$os\
+$username\
+$directory\
+$time\
+[ ](black)\
+$all\
+$line_break\
+[ │](fg:#404040)\
+$line_break\
+$character
+"""
+
+# Disable the blank line at the start of the prompt
+add_newline = true
+
+# You can also replace your username with a neat symbol like   or disable this
+# and use the os module below
+[username]
+show_always = true
+style_user = "bg:#2D2D2D fg:#FFFFFF"
+# format = '[ @ ]($style bg:#404040)[ $user ]($style) '
+format = '[ $user ]($style fg:#8C8C8C) '
+disabled = false
+
+# An alternative to the username module which displays a symbol that
+# represents the current operating system
+[os]
+disabled = false
+style = "bg:#2D2D2D fg:#FFFFFF"
+format = '[ $symbol ]($style bg:#404040)'
+
+[os.symbols]
+Alpaquita = ""
+Alpine = ""
+AlmaLinux = ""
+Amazon = ""
+Android = ""
+Arch = ""
+Artix = ""
+CachyOS = ""
+CentOS = ""
+Debian = ""
+DragonFly = ""
+Emscripten = ""
+EndeavourOS = ""
+Fedora = ""
+FreeBSD = ""
+Garuda = "󰛓"
+Gentoo = ""
+HardenedBSD = "󰞌"
+Illumos = "󰈸"
+Kali = ""
+Linux = ""
+Mabox = ""
+Macos = ""
+Manjaro = ""
+Mariner = ""
+MidnightBSD = ""
+Mint = ""
+NetBSD = ""
+NixOS = ""
+Nobara = ""
+OpenBSD = "󰈺"
+openSUSE = ""
+OracleLinux = "󰌷"
+Pop = ""
+Raspbian = ""
+Redhat = ""
+RedHatEnterprise = ""
+RockyLinux = ""
+Redox = "󰀘"
+Solus = "󰠳"
+SUSE = ""
+Ubuntu = ""
+Unknown = ""
+Void = ""
+Windows = "󰍲"
+
+[directory]
+style = "bg:#2D2D2D fg:#FFFFFF"
+format = "[  ]($style bg:#404040 fg:yellow)[ $path ]($style fg:#8C8C8C) "
+truncation_length = 3
+truncation_symbol = "…/"
+
+[character]
+error_symbol = "[ ╰](fg:#404040)[→](red)"
+success_symbol = "[ ╰→](fg:#404040)"
+
+[git_branch]
+symbol = ""
+style = "bg:#2D2D2D fg:#FFFFFF"
+format = '[ $symbol ]($style bg:#404040 fg:red)[ $branch ]($style) '
+
+[git_status]
+style = "bg:#2D2D2D fg:#FFFFFF"
+format = '([ 󰊢 ]($style bg:#404040 fg:red)[ $all_status$ahead_behind ]($style) )'
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
+
+[docker_context]
+symbol = ""
+style = "bg:#2D2D2D fg:#FFFFFF"
+format = '[ $symbol ]($style bg:#404040 fg:blue)[( $version )]($style) '
+
+[terraform]
+symbol = "󱁢"
+style = "bg:#2D2D2D fg:#FFFFFF"
+format = '[ $symbol ]($style bg:#404040 fg:purple)[( $version )]($style) '
+
+[package]
+symbol = "󰏗"
+style = "bg:#2D2D2D fg:#FFFFFF"
+format = '[ $symbol ]($style bg:#404040 fg:#BC9579)[( $version )]($style) '
+
+[python]
+symbol = ""
+style = "bg:#2D2D2D fg:#FFFFFF"
+format = '[ $symbol ]($style bg:#404040 fg:yellow)[( $version )]($style)([ $virtualenv ]($style bg:#404040 fg:green))'
+
+[rust]
+symbol = "󱘗"
+style = "bg:#2D2D2D fg:#FFFFFF"
+format = '[ $symbol ]($style bg:#404040 fg:BC9579)[( $version )]($style) '
+
+[lua]
+symbol = ""
+style = "bg:#2D2D2D fg:#FFFFFF"
+format = '[ $symbol ]($style bg:#404040 fg:blue)[( $version )]($style) '
+
+[golang]
+symbol = ""
+style = "bg:#2D2D2D fg:#FFFFFF"
+format = '[ $symbol ]($style bg:#404040 fg:blue)[( $version )]($style) '
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#2D2D2D fg:#FFFFFF"
+format = '[  ]($style bg:#404040)[ $time ]($style fg:#8C8C8C) '
+
+[vagrant]
+disabled = true
