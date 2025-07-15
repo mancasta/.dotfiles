@@ -7,6 +7,7 @@ $time\
 $line_break\
 [ │](fg:#404040)\
 $line_break\
+[ ╰](fg:#404040)\
 $character
 """
 
@@ -83,8 +84,8 @@ truncation_length = 3
 truncation_symbol = "…/"
 
 [character]
-error_symbol = "[ ╰](fg:#404040)[→](red)"
-success_symbol = "[ ╰→](fg:#404040)"
+error_symbol = "[→](red)"
+success_symbol = "[→](fg:#404040)"
 
 [git_branch]
 symbol = ""
