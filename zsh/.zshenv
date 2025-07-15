@@ -25,6 +25,3 @@ export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 # Added by wezterm
 export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
-
-# iterm2 shell integration
-test -e /Users/mancasta/.iterm2_shell_integration.zsh && source /Users/mancasta/.iterm2_shell_integration.zsh || true
