@@ -1,14 +1,6 @@
 # Add directories to PATH
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Set command completions
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
-
-# Set case-insensitive completions
-setopt NO_CASE_GLOB
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
 # Set history configuration
 HISTFILE=~/.cache/zsh/.zsh_history
 HISTSIZE=16384
