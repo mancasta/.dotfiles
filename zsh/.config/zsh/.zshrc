@@ -11,8 +11,8 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 
 # Set history configuration
 HISTFILE=~/.cache/zsh/.zsh_history
-HISTSIZE=8192
-SAVEHIST=8192
+HISTSIZE=16384
+SAVEHIST=16384
 
 # Prompt configuration
 prefered_prompt="starship" # options: starship, ohmyzsh
