@@ -2,12 +2,23 @@
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Set history configuration
-HISTFILE=~/.cache/zsh/.zsh_history
+setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire a duplicate event first when trimming history.
+setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS      # Delete an old recorded event if a new event is a duplicate.
+setopt HIST_FIND_NO_DUPS         # Do not display a previously found event.
+setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
+setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
+
+HISTFILE=$ZCACHE/.zsh_history
 HISTSIZE=16384
 SAVEHIST=16384
 
 # Prompt configuration
-## Starship config is done in ~./config/starship.toml
+
+# Starship config itself is done in ~./config/starship.toml
 if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
 fi
@@ -15,40 +26,59 @@ fi
 # User configuration
 
 # Alias definitions
-if [ -f "$ZDOTDIR/.zaliases.zsh" ]; then
-  . $ZDOTDIR/.zaliases.zsh
+if [ -f "$ZDOTDIR/aliases.zsh" ]; then
+  . $ZDOTDIR/aliases.zsh
 fi
 
 # Variables definitions
-if [ -f "$ZDOTDIR/.zvariables.zsh" ]; then
-  .  $ZDOTDIR/.zvariables.zsh
+if [ -f "$ZDOTDIR/variables.zsh" ]; then
+  .  $ZDOTDIR/variables.zsh
 fi
 
 # Functions
-if [ -f "$ZDOTDIR/.zfunctions.zsh" ]; then
-  .  $ZDOTDIR/.zfunctions.zsh
+if [ -f "$ZDOTDIR/functions.zsh" ]; then
+  .  $ZDOTDIR/functions.zsh
 fi
 
 # Completions
-if [ -f "$ZDOTDIR/.zcompletions.zsh" ]; then
-  .  $ZDOTDIR/.zcompletions.zsh
+if [ -f "$ZDOTDIR/completions.zsh" ]; then
+  .  $ZDOTDIR/completions.zsh
 fi
 
-## zsh-users (https://github.com/zsh-users)
-## zsh-history-substring-search
-export HISTORY_SUBSTRING_SEARCH_FUZZY=true
-source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
-## zsh-syntax-highlighting
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-## zsh-autosuggestions
-export ZSH_AUTOSUGGEST_STRATEGY=(completion history match_prev_cmd)
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-## zsh-autoenv
-source ~/.local/bin/zsh-autoenv/autoenv.zsh
+# Keys map for binding
 
-## atuin history
-eval "$(atuin init zsh --disable-up-arrow)"
+typeset -gA keys=(
+    Up    '^[[A'
+    Down  '^[[B'
+)
+
+## ZSH Plugins (https://github.com/zsh-users)
+
+## Set zsh-history-substring-search
+if [ -f "$HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh" ]; then
+  export HISTORY_SUBSTRING_SEARCH_FUZZY=true
+  source $HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+  bindkey -- "${keys[Up]}"    history-substring-search-up
+  bindkey -- "${keys[Down]}"  history-substring-search-down
+fi
+
+## Set zsh-syntax-highlighting
+if [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+## Set zsh-autosuggestions
+if [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  export ZSH_AUTOSUGGEST_STRATEGY=(completion history match_prev_cmd)
+  source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+## Set zsh-autoenv
+if [ -f "$HOME/.local/bin/zsh-autoenv/autoenv.zsh" ]; then
+  source $HOME/.local/bin/zsh-autoenv/autoenv.zsh
+fi
+
+## Set Atuin history
+if command -v atuin &> /dev/null; then
+  eval "$(atuin init zsh --disable-up-arrow)"
+fi

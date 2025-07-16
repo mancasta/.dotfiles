@@ -4,6 +4,9 @@
 # if running zsh
 if [ -n "$ZSH_VERSION" ]; then
     export ZDOTDIR="$HOME/.config/zsh";
+    export ZCACHE="$HOME/.cache/zsh";
+    mkdir -p $ZCACHE
+    mkdir -p $ZDOTDIR
 fi
 
 # set PATH so it includes user's private bin if it exists
@@ -12,7 +15,10 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # Added by homebrew install
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if command -v /opt/homebrew/bin/brew &> /dev/null; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    export HOMEBREW_PREFIX=$(brew --prefix)
+fi
 
 # Added by rundeck install
 export PATH="$HOME/.local/bin/rd-2.0.8/bin:$PATH"

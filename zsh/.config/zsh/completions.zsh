@@ -1,8 +1,8 @@
 # Load more completions from https://github.com/zsh-users/zsh-completions
 # in case of zsh compinit: insecure directories, run compaudit for list.
-# sudo chmod -R 755 $(brew --prefix)/share
-# sudo chown -R ${USER}:admin $(brew --prefix)/share
-fpath=($(brew --prefix)/share/zsh-completions/ $fpath)
+# sudo chmod -R 755 $HOMEBREW_PREFIX/share
+# sudo chown -R ${USER}:admin $HOMEBREW_PREFIX/share
+fpath=($HOMEBREW_PREFIX/share/zsh-completions/ $fpath)
 
 # Should be called before compinit
 zmodload zsh/complist
@@ -28,7 +28,7 @@ zstyle ':completion:*' completer _extensions _complete _approximate
 
 # Use cache for commands using cache
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "$ZDOTDIR/.zcompcache"
+zstyle ':completion:*' cache-path "$ZCACHE/.zcompcache"
 
 # Allow you to select in a menu
 zstyle ':completion:*' menu select 
