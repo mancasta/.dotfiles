@@ -13,6 +13,6 @@ pid-by-port() {
 }
 
 tutor() {
-    local PYTHONPATH="/Users/mancasta/Workspace/tutor"
-    (cd /Users/mancasta/Workspace/tutor && exec /Users/mancasta/Workspace/tutor/.venv/bin/tutor $@)
+    local PYTHONPATH="/Users/mancasta/Workspace/wwwin/tutor"
+    (cd /Users/mancasta/Workspace/wwwin/tutor && exec /Users/mancasta/Workspace/wwwin/tutor/.venv/bin/tutor $@)
 }
