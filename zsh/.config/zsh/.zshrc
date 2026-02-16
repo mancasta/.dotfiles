@@ -1,4 +1,5 @@
 # Add directories to PATH
+export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Set history configuration
@@ -12,13 +13,11 @@ setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
 setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
 
-HISTFILE=$ZCACHE/.zsh_history
-HISTSIZE=16384
-SAVEHIST=16384
+export HISTFILE="$ZCACHE/.zhistory"
+export HISTSIZE=16384
+export SAVEHIST=16384
 
-# Prompt configuration
-
-# Starship config itself is done in ~./config/starship.toml
+# Starship prompt
 if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
 fi
@@ -27,58 +26,50 @@ fi
 
 # Alias definitions
 if [ -f "$ZDOTDIR/aliases.zsh" ]; then
-  . $ZDOTDIR/aliases.zsh
+    source $ZDOTDIR/aliases.zsh
 fi
-
 # Variables definitions
 if [ -f "$ZDOTDIR/variables.zsh" ]; then
-  .  $ZDOTDIR/variables.zsh
+    source $ZDOTDIR/variables.zsh
 fi
 
 # Functions
 if [ -f "$ZDOTDIR/functions.zsh" ]; then
-  .  $ZDOTDIR/functions.zsh
+    source $ZDOTDIR/functions.zsh
 fi
 
 # Completions
 if [ -f "$ZDOTDIR/completions.zsh" ]; then
-  .  $ZDOTDIR/completions.zsh
+    source $ZDOTDIR/completions.zsh
 fi
 
-# Keys map for binding
+# Set Atuin history
 
-typeset -gA keys=(
-    Up    '^[[A'
-    Down  '^[[B'
-)
+if [ -f "$HOME/.atuin/bin/env" ]; then
+    source "$HOME/.atuin/bin/env"
+fi
 
-## ZSH Plugins (https://github.com/zsh-users)
+if command -v atuin &> /dev/null; then
+    eval "$(atuin init zsh --disable-up-arrow)"
+fi
+
+# ZSH Plugins (https://github.com/zsh-users)
 
 ## Set zsh-history-substring-search
 if [ -f "$HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh" ]; then
-  export HISTORY_SUBSTRING_SEARCH_FUZZY=true
-  source $HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-  bindkey -- "${keys[Up]}"    history-substring-search-up
-  bindkey -- "${keys[Down]}"  history-substring-search-down
+    export HISTORY_SUBSTRING_SEARCH_FUZZY=true
+    source $HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+    bindkey '^[[A' history-substring-search-up
+    bindkey '^[[B' history-substring-search-down
 fi
 
 ## Set zsh-syntax-highlighting
 if [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-  source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 ## Set zsh-autosuggestions
 if [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-  export ZSH_AUTOSUGGEST_STRATEGY=(completion history match_prev_cmd)
-  source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-
-## Set zsh-autoenv
-if [ -f "$HOME/.local/bin/zsh-autoenv/autoenv.zsh" ]; then
-  source $HOME/.local/bin/zsh-autoenv/autoenv.zsh
-fi
-
-## Set Atuin history
-if command -v atuin &> /dev/null; then
-  eval "$(atuin init zsh --disable-up-arrow)"
+    export ZSH_AUTOSUGGEST_STRATEGY=(completion history match_prev_cmd)
+    source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi

@@ -1,6 +1,7 @@
 # Load more completions from https://github.com/zsh-users/zsh-completions
 # in case of zsh compinit: insecure directories, run compaudit for list.
-# sudo chmod -R 755 $HOMEBREW_PREFIX/share
+# sudo chmod go-w '/opt/homebrew/share'
+# sudo chmod -R go-w '/opt/homebrew/share/zsh'
 # sudo chown -R ${USER}:admin $HOMEBREW_PREFIX/share
 fpath=($HOMEBREW_PREFIX/share/zsh-completions/ $fpath)
 
