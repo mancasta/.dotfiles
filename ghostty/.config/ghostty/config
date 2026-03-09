@@ -24,3 +24,5 @@ macos-titlebar-style = "tabs"
 
 # quick terminal
 quick-terminal-position = top
+
+shell-integration-features = ssh-terminfo
