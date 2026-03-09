@@ -4,6 +4,7 @@
 # sudo chmod -R go-w '/opt/homebrew/share/zsh'
 # sudo chown -R ${USER}:admin $HOMEBREW_PREFIX/share
 fpath=($HOMEBREW_PREFIX/share/zsh-completions/ $fpath)
+fpath+=~/.zfunc
 
 # Should be called before compinit
 zmodload zsh/complist
