@@ -1,6 +1,9 @@
 # env variables
 export AWS_DEFAULT_PROFILE="strln"
 export GIT_SSH_COMMAND="ssh -i /Users/mancasta/.ssh/id_ed25519"
+export TELEPORT_PROXY="teleport.strln.net:443"
+export TELEPORT_CLUSTER="teleport.strln.net"
+export TELEPORT_LOGIN="teleport-admin"
 
 # env secrets
 export JIRA_TOKEN="$(cat ~/.secrets/jira-token)"
