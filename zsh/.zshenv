@@ -92,3 +92,14 @@ fi
 
 # Added by rundeck install
 export PATH="$HOME/.local/bin/rd-2.0.8/bin:$PATH"
+
+# Added by Obsidian
+export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
+
+# >>> claude-code-config >>>
+export CLAUDE_CODE_USE_BEDROCK=1
+export ANTHROPIC_DEFAULT_SONNET_MODEL='global.anthropic.claude-sonnet-4-6'
+export ANTHROPIC_DEFAULT_OPUS_MODEL='global.anthropic.claude-opus-4-6-v1'
+export ANTHROPIC_DEFAULT_HAIKU_MODEL='global.anthropic.claude-haiku-4-5-20251001-v1:0'
+export BASH_MAX_TIMEOUT_MS='600000'
+# <<< claude-code-config <<<
