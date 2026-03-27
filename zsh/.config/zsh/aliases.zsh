@@ -10,8 +10,6 @@ alias scheduler-prod='scheduler-cli -H "scheduler.vm.strln.net" --key "$(get-tok
 # streamline aliases
 alias sl-container-prod='sl container cluster configure --cluster-id="elzkfld90z4zx52juhp0dtd1z"'
 alias sl-container-stage='sl container cluster configure --cluster-id="6r7wy3vwemgtj9buh670toju6"'
-alias sl-datadog='sl monitor datadog login --org-id cd07d04d6'
-alias sl-datadog-sigraki='sl monitor datadog login --org-id yjmmzgp5vm28wbxb'
 alias sl-aws-prod='sl aws session generate --account-id "632748658429" --role-name "owner" --profile "slvm_prod"'
 alias sl-aws-stage='sl aws session generate --account-id "612669989884" --role-name "owner" --profile "slvm_stage"'
 alias sl-aws-dev='sl aws session generate --account-id "495613368115" --role-name "owner" --profile "slvm_dev"'
@@ -34,3 +32,6 @@ alias tfswitch='tfswitch -b "$HOME/.local/bin/terraform"'
 alias aws-whoami='aws --profile strln sts get-caller-identity'
 alias ff="fastfetch"
 alias jctt="PYTHONPATH=/Users/mancasta/Workspace/cloudsec_sysv/ops-docs/checklists/scripts /Users/mancasta/Workspace/cloudsec_sysv/ops-docs/checklists/scripts/.venv/bin/JiraChecklistTemplate"
+
+# kubectl color alias
+command -v kubecolor >/dev/null 2>&1 && alias kubectl='kubecolor'

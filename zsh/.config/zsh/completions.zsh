@@ -13,6 +13,9 @@ autoload -U compinit; compinit
 # autoload -U +X bashcompinit
 _comp_options+=(globdots) # With hidden files
 
+# Completion for alias of kubectl
+compdef kubecolor=kubectl
+
 # Options
 
 setopt MENU_COMPLETE        # Automatically highlight first element of completion menu
@@ -70,4 +73,4 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 
 zstyle ':completion:*' keep-prefix true
 
-zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
+zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync|tsh):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
