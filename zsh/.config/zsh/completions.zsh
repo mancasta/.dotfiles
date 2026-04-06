@@ -13,8 +13,12 @@ autoload -U compinit; compinit
 # autoload -U +X bashcompinit
 _comp_options+=(globdots) # With hidden files
 
-# Completion for alias of kubectl
-compdef kubecolor=kubectl
+# completion for k8s alias
+# Only bind kubecolor to kubectl's completion when compinit has already
+# registered kubectl as a completion service in this shell.
+if command -v kubecolor >/dev/null 2>&1 && (( $+_comps[kubectl] )); then
+    compdef kubecolor=kubectl
+fi
 
 # Options
 
@@ -36,7 +40,7 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$ZCACHE/.zcompcache"
 
 # Allow you to select in a menu
-zstyle ':completion:*' menu select 
+zstyle ':completion:*' menu select
 # zstyle ':completion:*' menu select search # for fuzzy-search within the completion menu
 
 # Autocomplete options for cd instead of directory stack
@@ -69,7 +73,7 @@ zstyle ':completion:*:*:-command-:*:*' group-order aliases builtins functions co
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # Completion of files and directories like `ls -l`
-# zstyle ':completion:*' file-list all 
+# zstyle ':completion:*' file-list all
 
 zstyle ':completion:*' keep-prefix true
 
