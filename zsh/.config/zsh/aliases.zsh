@@ -26,6 +26,8 @@ alias rd-dev-test2="RD_TOKEN="$(cat ~/.secrets/rd-dev-test2)" RD_URL=https://run
 alias rd-legacy="RD_TOKEN="$(cat ~/.secrets/rd-legacy)" RD_URL=https://rundeck-usw2.compute.strln.net/rd/api/24 rd-1-4-3"
 
 # random tools aliases
+alias gst='git status'
+alias gb='git branch'
 alias now='date -u "+%Y-%m-%dT%H-%M-%S%Z"'
 alias k9s='k9s --readonly -n default'
 alias tfswitch='tfswitch -b "$HOME/.local/bin/terraform"'
