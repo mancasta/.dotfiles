@@ -108,7 +108,7 @@ format = '[ $symbol ](bg:icon_bg fg:red bold)[ $branch ]($style) '
 
 [git_status]
 style = "bg:text_bg fg:text_fg"
-format = '[  ](bg:icon_bg fg:red bold)[ $all_status$ahead_behind ]($style) '
+format = '([  ](bg:icon_bg fg:red bold)[ $all_status$ahead_behind ]($style) )'
 conflicted = "[>=<](bg:text_bg fg:purple dimmed)"
 ahead = "[>](bg:text_bg fg:blue dimmed)"
 behind = "[<](bg:text_bg fg:yellow dimmed)"

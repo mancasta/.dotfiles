@@ -102,7 +102,7 @@ format = '[](fg:icon_bg)[$symbol](bg:icon_bg fg:red bold)[[](bg:text_bg fg
 
 [git_status]
 style = "bg:text_bg fg:text_fg"
-format = '[](fg:icon_bg)[gst](bg:icon_bg fg:red bold)[[](bg:text_bg fg:icon_bg) $all_status$ahead_behind]($style)[](fg:prev_bg) '
+format = '([](fg:icon_bg)[gst](bg:icon_bg fg:red bold)[[](bg:text_bg fg:icon_bg) $all_status$ahead_behind]($style)[](fg:prev_bg) )'
 conflicted = "[>=<](bg:text_bg fg:purple dimmed)"
 ahead = "[>](bg:text_bg fg:blue dimmed)"
 behind = "[<](bg:text_bg fg:yellow dimmed)"
