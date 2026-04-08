@@ -72,8 +72,13 @@ style_user = "bg:text_bg fg:text_fg dimmed"
 format = '[ who ](bg:icon_bg fg:text_fg bold)[ $user ]($style) '
 
 [directory]
+read_only = ":ro"
+read_only_style = "bg:text_bg fg:yellow italic"
 style = "bg:text_bg fg:text_fg dimmed"
-format = "[ pwd ](bg:icon_bg fg:yellow bold)[ $path ]($style) "
+before_repo_root_style = "bg:text_bg fg:black"
+repo_root_style = "bg:text_bg fg:purple bold dimmed"
+repo_root_format = "[ pwd ](bg:icon_bg fg:yellow bold)[ [$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) ]($style) "
+format = "[ pwd ](bg:icon_bg fg:yellow bold)[ [$path]($style)[$read_only]($read_only_style) ]($style) "
 truncation_length = 4
 truncation_symbol = "…/"
 

@@ -72,8 +72,13 @@ style_user = "bg:text_bg fg:text_fg dimmed"
 format = '[](fg:icon_bg)[who](bg:icon_bg fg:text_fg bold)[[](bg:text_bg fg:icon_bg) $user]($style)[](fg:prev_bg) '
 
 [directory]
+read_only = ":ro"
+read_only_style = "bg:text_bg fg:yellow italic"
 style = "bg:text_bg fg:text_fg dimmed"
-format = "[](fg:icon_bg)[pwd](bg:icon_bg fg:yellow bold)[[](bg:text_bg fg:icon_bg) $path]($style)[](fg:prev_bg) "
+before_repo_root_style = "bg:text_bg fg:black"
+repo_root_style = "bg:text_bg fg:purple bold dimmed"
+repo_root_format = "[](fg:icon_bg)[pwd](bg:icon_bg fg:yellow bold)[[](bg:text_bg fg:icon_bg) [$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)]($style)[](fg:prev_bg) "
+format = "[](fg:icon_bg)[pwd](bg:icon_bg fg:yellow bold)[[](bg:text_bg fg:icon_bg) [$path]($style)[$read_only]($read_only_style)]($style)[](fg:prev_bg) "
 truncation_length = 4
 truncation_symbol = "…/"
 
