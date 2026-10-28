@@ -10,6 +10,7 @@ alias scheduler-prod='scheduler-cli -H "scheduler.vm.strln.net" --key "$(get-tok
 
 # streamline aliases
 alias sl-container-prod='sl container cluster configure --cluster-id="elzkfld90z4zx52juhp0dtd1z"'
+alias sl-container-preprod='sl container cluster configure --cluster-id="4c7l6uesud8905ek7bhx65iwf"'
 alias sl-container-stage='sl container cluster configure --cluster-id="6r7wy3vwemgtj9buh670toju6"'
 alias sl-aws-prod='sl aws session generate --account-id "632748658429" --role-name "owner" --profile "slvm_prod"'
 alias sl-aws-preprod='sl aws session generate --account-id "065148239691" --role-name "owner" --profile "slvm_preprod"'
