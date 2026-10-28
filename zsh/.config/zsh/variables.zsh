@@ -1,7 +1,7 @@
 # env variables
 # export AWS_REGION='us-east-1'
 export AWS_DEFAULT_PROFILE="strln"
-export AWS_ACCESS_KEY_ID='AKIARVVJYHHNUXVDXDV6'
+export AWS_ACCESS_KEY_ID='AKIARVVJYHHNZDEOZPPO'
 export GIT_SSH_COMMAND="ssh -i /Users/mancasta/.ssh/id_ed25519"
 export TELEPORT_PROXY="teleport.strln.net:443"
 export TELEPORT_CLUSTER="teleport.strln.net"
